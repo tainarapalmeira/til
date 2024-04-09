@@ -37,8 +37,8 @@ Some other useful commands to remember: `git log --oneline`
    - `git branch` &rarr; lists existing branches in the repository.
    - `git switch -c <branch-name>` or `git checkout -b <branch-name>` &rarr; creates and switches to the new branch
    - `git branch -m <new-branch-name>` &rarr; rename a branch
-   - `git branch -d <branch-name>`
-   - `git branch -D <branch-name>`
+   - `git branch -d <branch-name>` &rarr; delete a branch
+   - `git branch -D <branch-name>` &rarr; delete a branch forcefully
 
 
 ## Git Merge
@@ -48,3 +48,30 @@ Some other useful commands to remember: `git log --oneline`
 
 - **We always merge to the current HEAD branch**.
 
+- Fast-foward merge.
+
+## Comparing changes with Git Diff
+- We can use the `git diff` command to view changes between commits, branches, files, and working directories.
+
+- `git diff` lists all the changes in our working directory that are **NOT** staged for the next commit. This means it compares the *staging area* and *working directory*. - What I could add to the *staging area* -
+
+- `git diff HEAD` lists all changes in the working directory tree since the last commit. Therefore, it compares *staged* and *unstaged* work since HEAD.
+
+- `git diff --stage` or `git diff --cache` will list the changes between the staging area and the last commit. - What will be included in my next commit if I run git commit right now. -
+
+- Comparing branches: `git diff branch1..branch2`
+
+## Git Stash
+- Stashing: Git provides an easy way of stashing uncommitted changes so that we can return to them later without having to make unnecessary commits.
+
+- Running `git stash` will take all uncommitted changes (*staged and unstaged*) and stash them, reverting the changes in the current working directory.
+   - `git stash save` or just `git stash`
+
+- `git stash pop` removes the most recently stashed changes from your stash and reapplies them to your working directory.
+
+- Stash apply: git stash apply applies whatever is stashed away without removing it from the stash. This can be useful if you want to apply stashed changes to multiple branches.
+
+- Some other useful commands to remember:
+   git stash list
+   git stash drop <stash-id> &rarr; delete a particular stash
+   git stash clear &rarr; removes all the stash
