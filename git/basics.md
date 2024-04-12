@@ -72,6 +72,28 @@ Some other useful commands to remember: `git log --oneline`
 - Stash apply: git stash apply applies whatever is stashed away without removing it from the stash. This can be useful if you want to apply stashed changes to multiple branches.
 
 - Some other useful commands to remember:
-   git stash list
-   git stash drop <stash-id> &rarr; delete a particular stash
-   git stash clear &rarr; removes all the stash
+   - `git stash list`
+   - `git stash drop <stash-id>` &rarr; delete a particular stash
+   - `git stash clear` &rarr; removes all the stashes
+
+## Git checkout
+- `git checkout <commit-hash>` &rarr; to view a previous commit.
+
+- Usually, the HEAD reference directs to a branch within a repository, serving as a pointer indicating the current active branch.
+
+- In a detached HEAD state, HEAD no longer references a branch but instead points to a specific commit in the repository.
+
+- `git checkout` supports a slightly odd syntax for referencing previous commits relative to a particular commit:
+   - HEAD~1 refers to the commit before HEAD, HEAD~2 refers to the 2nd commit before HEAD, and so on.
+
+- `git checkout HEAD <filename>` or `git checkout -- <filename>` for discarding changes.
+
+## Git restore
+- `git restore <filename>` restores using HEAD as the default source, but we can change that using the `--source` option.
+
+- Unstaging with `restore`: `git restore --stage <filename>`
+
+## Git reset
+- Some other useful commands to remember:
+   - `git reset <commit-hash>` &rarr; reset the repo back to a specific commit.
+   - `git reset --hard HEAD~1` &rarr; undo both commit and changes in the repo.
